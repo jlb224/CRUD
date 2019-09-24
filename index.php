@@ -42,7 +42,10 @@
                     <tr>
                         <td><?php echo $row['name']; ?></td>
                         <td><?php echo $row['location']; ?></td>
-                        <td></td> <!-- Will hold edit, delete buttons later.-->
+                        <td>
+                            <a href="index.php?edit=<?php echo $row['id']; ?>" class="btn btn-info">Edit</a>
+                            <a href="index.php?delete=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a> 
+                        </td> <!-- Will hold edit, delete buttons later.-->
                     </tr>
                 <?php endwhile; ?>
                 </table>
