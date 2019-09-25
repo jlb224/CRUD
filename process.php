@@ -3,6 +3,7 @@
 // Start the session.
 session_start();
 
+$id = 0;
 $name = "";
 $location = "";
 $update = false;
