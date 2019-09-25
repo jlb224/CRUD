@@ -15,6 +15,18 @@
         </head>
         <body>
             <?php require_once 'process.php'; ?>
+
+            <?php
+            // Print session variables.
+            if (isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION['msg_type']?>">
+                <?php 
+                    echo $_SESSION['message'];
+                    unset($_SESSION['message']);
+                ?>
+            </div>
+            <?php endif ?>
+
             <div class="container">
             <!-- Connect to database and select the existing records. -->
             <?php
@@ -63,11 +75,11 @@
                 <form action="process.php" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" value="Enter your name">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name">
                     </div>
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <input type="text" name="location" id="location" class="form-control" value="Enter your location">
+                        <input type="text" name="location" id="location" class="form-control" placeholder="Enter your location">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary" name="save">Save</button>
